@@ -1,0 +1,154 @@
+
+ /* Josh's Custom CSS Reset
+https://www.joshwcomeau.com/css/custom-css-reset/ */
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding:0;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  font-weight: inherit;
+  background-color: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Custom attribute */
+:root{
+  /* Colours */
+  /* --Colour-mainButton:;  */
+  --Colour-box1:hsl(31, 77%, 52%);
+  --Colour-box2: hsl(184, 100%, 22%);
+  --Colour-box3: hsl(179, 100%, 13%);
+  --Colour-paragraphs:hsla(0, 0%, 100%, 0.75);
+  --Colour-background-headings-buttons: hsl(0, 0%, 95%);
+  --Colour-outer-background:;
+
+  /* Fonts */
+  --defaultFontSize:0.938rem;
+  /* --smallFontSize:calc(var(--defaultFontSize)/1.40625); font-size:0.8rem; */
+  --font-default:'Big Shoulders Display', sans-serif;
+  --font-secondary:'Lexend Deca', sans-serif;
+   
+  --fontweight-large:700;
+  --fontweight-medium:400;
+  /* --fontweight-small:500; */
+
+  /* Padding & Margin */
+  --defaultMargin:1.5rem;
+  --defaultPadding:3rem;
+}
+.attribution { font-size: 0.688rem; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+.attribution p {color:black;}
+body {
+  line-height: 1.5;
+  
+  -webkit-font-smoothing: antialiased;
+  
+  font-family: var(--font-default);
+  font-size:var(--defaultFontSize); 
+  background-color: var(--Colour-background-headings-buttons);
+  font-weight: var(--fontweight-medium);
+  color:var(--Colour-paragraphs);  
+}
+Main {
+    
+    min-height: calc(100vh - 1.032rem);
+}
+/* .hidden {
+    display:none;
+} */
+.vehicle-poster-container {
+  display:grid;
+  border-radius: 0.5rem;
+  margin:4.2rem var(--defaultMargin);
+  overflow: hidden;
+}
+article.grid-container {
+    background-color: var(--Colour-box1);
+    
+    padding: var(--defaultPadding);
+    
+    display:grid;
+    gap:1.7rem;
+}
+
+h1{
+  text-transform: uppercase;
+  font-size: calc(var(--defaultFontSize)*2.8) ;
+  color: var(--Colour-background-headings-buttons);
+}
+h2{
+  text-transform: uppercase;
+  font-size: calc(var(--defaultFontSize)*2.8) ;
+  color: var(--Colour-background-headings-buttons);
+}
+p{
+  font-family: var(--font-secondary);
+  font-weight: var(--fontweight-medium);
+}
+button {
+  background-color: var(--Colour-background-headings-buttons);
+  padding:calc(var(--defaultPadding)*0.25);
+  border-radius: 2rem;
+  width:63%;
+  border:none;
+}
+button a {
+  text-decoration: none;
+  font-family: var(--font-secondary);
+  color:var(--Colour-box1);
+}
+article.suvs {
+  background-color: var(--Colour-box2);
+}
+article.luxury {
+  background-color: var(--Colour-box3);
+}
+.suvs a {
+  color: var(--Colour-box2);
+}
+.luxury a {
+  color: var(--Colour-box3);
+}
+
+button:is(:hover,:focus) {
+  cursor: pointer;
+}
+
+
+/* Desktop view */
+
+@media (min-width:700px) {
+ 
+  .vehicle-poster-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0; 
+    max-width: 57.438rem;
+  }
+  main {
+    display:grid;
+    place-content: center;
+  }
+  article.grid-container {
+    gap:1.5rem;
+  }
+  p {
+    line-height: 1.65;
+  }
+  button {
+    margin-top:3.5rem;
+  }
+}
