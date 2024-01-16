@@ -105,30 +105,38 @@ button {
   border-radius: 2rem;
   width:63%;
   border:none;
-}
-button a {
   text-decoration: none;
   font-family: var(--font-secondary);
   color:var(--Colour-box1);
 }
+
 article.suvs {
   background-color: var(--Colour-box2);
 }
 article.luxury {
   background-color: var(--Colour-box3);
 }
-.suvs a {
+.suvs button {
   color: var(--Colour-box2);
 }
-.luxury a {
+.luxury button {
   color: var(--Colour-box3);
 }
 
 button:is(:hover,:focus) {
   cursor: pointer;
+  background-color: var(--Colour-box1);
+  color: var(--Colour-background-headings-buttons);
+  border: solid var(--Colour-background-headings-buttons);
+  padding:calc(var(--defaultPadding)*0.25 - 3px);
 }
 
-
+.suvs button:is(:hover,:focus) {
+  background-color: var(--Colour-box2);
+}
+.luxury button:is(:hover,:focus) {
+  background-color: var(--Colour-box3);
+}
 /* Desktop view */
 
 @media (min-width:700px) {
